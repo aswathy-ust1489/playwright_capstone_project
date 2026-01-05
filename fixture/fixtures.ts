@@ -1,6 +1,6 @@
 import { test as base, expect as baseExpect } from '@playwright/test';
-import { FlipkartPage } from '../pages/flipkart.page';
-import { AmazonPage } from '../pages/amazon.page';
+import { FlipkartPage } from '../pages/flipkart/flipkart.page';
+import { AmazonPage } from '../pages/amazon/amazon.page';
 
 type MyFixtures = {
   flipkart: FlipkartPage;

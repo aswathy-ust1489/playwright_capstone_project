@@ -1,7 +1,7 @@
 import { Page, Locator } from '@playwright/test';
-import { BASE_URL } from '../util/constants';
+import { AMAZON_BASE_URL } from '../../util/constants';
 
-export class FlipkartPage {
+export class AmazonPage {
   readonly page: Page;
   readonly modalClose: Locator;
   readonly loginLocator: Locator;
@@ -10,14 +10,14 @@ export class FlipkartPage {
 
   constructor(page: Page) {
     this.page = page;
-    this.modalClose = page.locator('button:has-text("✕")');
-    this.loginLocator = page.getByText(/Login|Log in|Sign in/i).first();
-    this.accountBtn = page.locator('a[href*="account"], button[aria-label*="account"], a:has-text("My Account")');
-    this.loginInput = page.locator('input[type="text"], input[type="email"], input[type="tel"], input[name="phone"]');
+    this.modalClose = page.locator('button:has-text("✕"), #attach-close_sideSheet-link, #nav-main button');
+    this.loginLocator = page.getByText(/Login|Log in|Sign in|Hello, Sign in/i).first();
+    this.accountBtn = page.locator('#nav-link-accountList, a#nav-your-amazon, a:has-text("Account")');
+    this.loginInput = page.locator('input[type="email"], input[type="text"], input#ap_email');
   }
 
   async goto() {
-    await this.page.goto(BASE_URL, { waitUntil: 'networkidle' });
+    await this.page.goto(AMAZON_BASE_URL);
   }
 
   async closeModalIfVisible() {
