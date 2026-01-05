@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test --headed"
+    "test_amazon": "npx playwright test tests/amazon --headed",
+    "test_flipkart": "npx playwright test tests/flipkart --headed"
   },
   "keywords": [],
   "author": "",
