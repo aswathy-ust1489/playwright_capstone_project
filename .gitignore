@@ -6,9 +6,3 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
-
-# Ignore specific folders
-tests/amazon/
-tests/flipkart/
-pages/amazon/
-pages/flipkart/
